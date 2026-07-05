@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lxtl6w4tx0q5"
+path="res://.godot/imported/wall-broken-type-b.obj-dbc47c6107fb38aef611f0e868d2acda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-broken-type-b.obj-dbc47c6107fb38aef611f0e868d2acda.mesh"]
+
+source_file="res://addons/kenney_retro-urban-kit/Models/OBJ format/wall-broken-type-b.obj"
+dest_files=["res://.godot/imported/wall-broken-type-b.obj-dbc47c6107fb38aef611f0e868d2acda.mesh", "res://.godot/imported/wall-broken-type-b.obj-dbc47c6107fb38aef611f0e868d2acda.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
