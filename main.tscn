@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://psfao3c2gotm"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_top_color = Color(0.33639044, 0.47216314, 0.5296441, 1)
+sky_horizon_color = Color(0.6510787, 0.6772719, 0.6826421, 1)
+ground_horizon_color = Color(0.6510787, 0.6772719, 0.6826421, 1)
+energy_multiplier = 2.3
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_3nkxo"]
+size = Vector3(46.240784, 0.001, 41.105408)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ardpv"]
+size = Vector3(5.0828857, 3.3146973, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdoqp"]
+size = Vector3(5.0398865, 3.0341797, 0.1126709)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdoqp"]
+size = Vector3(4.268982, 4.807617, 0.109375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ardpv"]
+size = Vector3(4.1293945, 4.1532593, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1u6mt"]
+size = Vector3(46.67926, 3.0944824, 56.848297)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t0hve"]
+size = Vector3(6.520996, 5.4716797, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nkxo"]
+size = Vector3(5.659973, 4.7575684, 1.8056641)
+
+[node name="Main" type="Node3D" unique_id=1290216527]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624463647]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=303515314]
+transform = Transform3D(-0.28736052, -0.8328218, 0.47310868, 0, 0.4939419, 0.8694949, -0.9578225, 0.24985851, -0.1419394, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1074605266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9002895, 1.0016627, -12.488106)
+mesh = SubResource("BoxMesh_3nkxo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=325312524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.941732, 1.3941808, 11.9886055)
+mesh = SubResource("BoxMesh_ardpv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D2" unique_id=1284923682]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D2/StaticBody3D" unique_id=1737672291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008834839, 0.1352539, 0.024230957)
+shape = SubResource("BoxShape3D_bdoqp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1640657623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.711416, 2.1737661, 3.4848824)
+mesh = SubResource("BoxMesh_bdoqp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D3" unique_id=1658036574]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D3/StaticBody3D" unique_id=1422172194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0690918, 0.16348267, -0.066417694)
+shape = SubResource("BoxShape3D_ardpv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=34259867]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1766822104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39517212, -1.625608, -5.943882)
+shape = SubResource("BoxShape3D_1u6mt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1573167102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.760498, 2.6854725, 7.308579)
+mesh = SubResource("BoxMesh_t0hve")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D" unique_id=1746733745]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D/StaticBody3D" unique_id=1252334940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051849365, 0.099975586, 0.40283203)
+shape = SubResource("BoxShape3D_3nkxo")
+
+[node name="ProtoController" parent="." unique_id=390944967 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70749664, 1.1552277, 2.0119324)
+
+[node name="Camera3D" type="Camera3D" parent="ProtoController" unique_id=1832065858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73475385, 1.1077371, 6.6665792)
